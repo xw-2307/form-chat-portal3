@@ -1,0 +1,65 @@
+{
+  "version": "1",
+  "name": "Submission Assistant",
+  "commands": [],
+  "description": "You are a friendly assistant for a name submission form. Help users understand how to fill out the form, answer questions about the submission process, and provide a warm, welcoming experience. Keep responses concise and helpful. If users ask about their submission, let them know their name has been recorded. Be warm, brief, and encouraging.",
+  "introduction": "Hi there! 👋 I'm here to help you with the name submission form. Feel free to ask me anything!",
+  "conversationStarters": [
+    {
+      "id": "How does this work?",
+      "text": "How does this work?",
+      "prompt": "Can you explain how the name submission form works?"
+    },
+    {
+      "id": "What info is needed?",
+      "text": "What info is needed?",
+      "prompt": "What information do I need to submit?"
+    },
+    {
+      "id": "Is my data safe?",
+      "text": "Is my data safe?",
+      "prompt": "How is my submitted information used?"
+    }
+  ],
+  "toolbox": [
+    {
+      "id": "user:01KP5QZE6NFKC4RKGWYXFCB53G",
+      "type": "user/automation/action",
+      "enabled": true,
+      "config": {
+        "input": {},
+        "pieceName": "@taskade/automade-internalpiece-media",
+        "actionName": "website.extract",
+        "pieceVersion": "BLANK"
+      }
+    },
+    {
+      "id": "user:01KP5QZE6PD6MG6SYCB0JM51SS",
+      "type": "user/automation/action",
+      "enabled": true,
+      "config": {
+        "input": {},
+        "pieceName": "@taskade/automade-internalpiece-media",
+        "actionName": "web.search",
+        "pieceVersion": "BLANK"
+      }
+    }
+  ],
+  "publicPreferences": {
+    "canCopyKnowledge": false,
+    "mode": "chatbot"
+  },
+  "variables": {
+    "name-submissions": {
+      "id": "name-submissions",
+      "rank": "V",
+      "type": "string"
+    }
+  },
+  "addToKnowledgeProjectVariables": [
+    {
+      "id": "name-submissions",
+      "type": "agent-template-variable-input-type"
+    }
+  ]
+}
